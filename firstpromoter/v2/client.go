@@ -4,7 +4,7 @@ import (
 	"net/http"
 )
 
-func New(accountId string, apiKey string, client http.Client) *Client {
+func New(accountId string, apiKey string, client *http.Client) *Client {
 	handler := Client{
 		accountId: accountId,
 		apiKey:    apiKey,
@@ -17,5 +17,5 @@ func New(accountId string, apiKey string, client http.Client) *Client {
 type Client struct {
 	accountId string
 	apiKey    string
-	client    http.Client
+	client    *http.Client
 }
