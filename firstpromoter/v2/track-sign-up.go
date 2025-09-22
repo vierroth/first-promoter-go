@@ -95,7 +95,7 @@ func (client Client) TrackSignUp(ctx context.Context, input TrackSignUpInput) (*
 		return nil, fmt.Errorf("build request: %w", err)
 	}
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("Account-ID", client.accountId)
+	req.Header.Set("ACCOUNT-ID", client.accountId)
 	req.Header.Set("Authorization", "Bearer "+client.apiKey)
 
 	resp, err := client.client.Do(req)
